@@ -1,5 +1,4 @@
 
-require 'byebug'
 require 'rest-client'
 # require './concerns/config.rb'
 require_relative './concerns/config.rb'
