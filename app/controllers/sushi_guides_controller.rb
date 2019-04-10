@@ -1,2 +1,0 @@
-class SushiGuidesController < ApplicationController
-end

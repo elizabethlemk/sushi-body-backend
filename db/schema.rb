@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2019_03_21_185224) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
-    t.string "sushi_id"
+    t.integer "sushi_guide_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -41,9 +41,14 @@ ActiveRecord::Schema.define(version: 2019_03_21_185224) do
   end
 
   create_table "sushi_guides", force: :cascade do |t|
-    t.string "english_name"
-    t.string "japanese_name"
-    t.string "type"
+    t.string "type_one"
+    t.string "type_two"
+    t.string "name"
+    t.string "english"
+    t.string "kanji"
+    t.string "hiragana"
+    t.string "katakana"
+    t.string "img"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -52,8 +57,11 @@ ActiveRecord::Schema.define(version: 2019_03_21_185224) do
     t.string "first_name"
     t.string "last_name"
     t.string "location"
+    t.float "latitude"
+    t.float "longitude"
     t.date "birthday"
     t.string "username"
+    t.string "restaurants", default: [], array: true
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
